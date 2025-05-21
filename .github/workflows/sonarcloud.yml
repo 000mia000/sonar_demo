@@ -29,10 +29,7 @@ jobs:
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
 
-      - name: SonarCloud Scan
+      - name: Run SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
-        with:
-          organization: "000mia000"                 # ✅ 你的 SonarCloud 組織 ID
-          projectKey: "000mia000_software"          # ✅ 你的專案 key
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # ✅ 在 GitHub 設定的 Secret
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
